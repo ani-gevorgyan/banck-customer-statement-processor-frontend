@@ -1,6 +1,9 @@
-# Vite + React + TailwindCSS + TypeScript Starter Template
+# Bank Customer Statement Processor front-end
 
-This is a project starter template for a React application using Vite, TailwindCSS, and TypeScript.
+This is a front-end of a bank customer statement processor app. It allows to upload a statement record file in .xml or .csv format and gets as a response a final pdf report based on the uploaded record which opens in a new tab in the browser. 
+
+The application is using a project starter template for a React application using Vite, TailwindCSS, and TypeScript.
+Uses circleci for autmated deployments to heroku.
 
 ## Features
 
@@ -9,53 +12,22 @@ This is a project starter template for a React application using Vite, TailwindC
 - TailwindCSS for rapid style development
 - TypeScript for type safety
 
-## Getting Started
-
-Follow these steps to get started with this starter template:
-
-### Prerequisites
-
-Before you begin, ensure you have met the following requirements:
-
-- You have installed [node.js and npm](https://nodejs.org/en/download/).
-
-### Installing and Running
+## Scripts Available
 
 To install and run this project, use the following steps:
 
-1. Clone this repository:
+In the project directory run the following commands:
 
-```bash
-git clone https://github.com/yourusername/repository.git
-```
-
-Navigate into the directory:
-
-```
-cd repository
-```
-
-Install the dependencies:
+### Install the dependencies:
 
 ```
 npm install
 ```
-
-Run the project:
+### Run the project:
 
 ```
 npm run dev
-
 ```
+This runs the project locally connected to already deployed backend.
 
-### Contributing
-If you want to contribute to this project, follow these steps:
-
-Fork this repository.
-Create a branch: git checkout -b <branch_name>.
-Make your changes and commit them: git commit -m '<commit_message>'.
-Push to the original branch: git push origin <project>/<location>.
-Create the pull request.
-Alternatively, see the GitHub documentation on creating a pull request.
-  
-  
+If you want to make request to the local backend api, you need to change the `BASE_URL` in `constants.ts` file to the local backend url.
