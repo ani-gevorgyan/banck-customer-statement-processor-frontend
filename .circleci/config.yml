@@ -1,20 +1,30 @@
 version: 2.1
+
 orbs:
-  node: circleci/node@5.0.2
+  heroku: circleci/heroku@0.0.10
+
 jobs:
-  build-and-run:
+  build_and_run:
     docker:
-      - image: "cimg/base:stable"
+      - image: circleci/node:10.16.3
+    working_directory: ~/repo
     steps:
       - checkout
-      - node/install:
-          node-version: "12.22"
-      - node/install-packages
+      # install dependencies
       - run:
-        command: npm install
+          name: Install Dependencies
+          command: npm install
       - run:
+          name: Run
           command: npm run dev
 workflows:
-  build-and-run:
+  heroku_deploy:
     jobs:
-      - build-and-run
+      - build_and_run
+      - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
+          app-name: $HEROKU_APP_NAME
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
