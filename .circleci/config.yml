@@ -16,7 +16,7 @@ jobs:
           command: npm install
       - run:
           name: Build
-          command: npm run build
+          command: npm build
 workflows:
   heroku_deploy:
     jobs:
