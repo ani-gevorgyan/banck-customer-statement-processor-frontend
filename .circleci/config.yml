@@ -10,7 +10,7 @@ jobs:
       - node/install:
           node-version: "12.22"
       - node/install-packages
-      -run:
+      - run:
         command: npm install
       - run:
           command: npm run dev
