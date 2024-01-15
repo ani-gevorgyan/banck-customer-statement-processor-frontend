@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "start": "PORT=3000 vite --port $PORT",
+    "dev": "vite --host",
+    "start": "vite --port $PORT --host",
     "build": "vite build",
     "preview": "vite preview"
   },
