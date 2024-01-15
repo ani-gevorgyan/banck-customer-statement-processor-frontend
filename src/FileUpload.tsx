@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BASE_URL } from "./constants";
 
 const FileUploader = () => {
     const [message, setMessage] = useState<string>("");
@@ -22,7 +23,7 @@ const FileUploader = () => {
             formData.append("file", file);
 
             try {
-                const result = await fetch("http://localhost:4000/api/v1/record", {
+                const result = await fetch(`${BASE_URL}/record`, {
                     method: "POST",
                     body: formData,
                 });

@@ -1,0 +1,1 @@
+export const BASE_URL = 'https://bank-statement-processor-back-9a8dcdfe6970.herokuapp.com/api/v1';
